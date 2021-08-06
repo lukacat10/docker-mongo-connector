@@ -2,8 +2,8 @@
 
 mongo="${MONGO:-mongo}"
 mongoport="${MONGOPORT:-27017}"
-elasticsearch="${ELASTICSEARCH:-elasticsearch}"
-elasticport="${ELASTICPORT:-9200}"
+solr="${SOLR:-solr}"
+solrport="${SOLRPORT:-8983}"
 
 
 function _mongo() {
@@ -29,4 +29,4 @@ done
 
 sleep 1
 
-mongo-connector --auto-commit-interval=0 --oplog-ts=/data/oplog.ts -m ${mongo}:${mongoport} -t ${elasticsearch}:${elasticport} -d elastic_doc_manager
+mongo-connector --auto-commit-interval=0 --oplog-ts=/data/oplog.ts -m ${mongo}:${mongoport} -t ${solr}:${solrport} -d solr_doc_manager
